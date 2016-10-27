@@ -2,6 +2,8 @@ var GameLayer = cc.Layer.extend({
     ctor: function () {
         this._super();
 
+        // cc.spriteFrameCache.addSpriteFrames(res.Sushi_plist);
+
         var size = cc.winSize;
 
         // add bg

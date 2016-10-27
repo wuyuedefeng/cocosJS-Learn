@@ -3,6 +3,8 @@ var RouSprite = cc.Sprite.extend({
         cc.log("onEnter");
         this._super();
 
+        // this.disappearAction = this.createDisappearAction();
+
         this.addTouchEventListenser();
     },
     onExit: function () {
@@ -19,6 +21,16 @@ var RouSprite = cc.Sprite.extend({
                 var target = event.getCurrentTarget();
                 if (cc.rectContainsPoint(target.getBoundingBox(), pos)){
                     cc.log('touched');
+                    // target.removeTouchEventListenser;
+
+                    //响应精灵点中
+                    cc.log("pos.x="+pos.x+",pos.y="+pos.y);
+                    target.stopAllActions();
+
+                    target.getParent().removeRou(target.index - 1);
+                    target.removeFromParent();
+
+
                     return true;
                 }
                 return false;
@@ -26,4 +38,16 @@ var RouSprite = cc.Sprite.extend({
         });
         cc.eventManager.addListener(touchListener, this);
     }
+    // createDisappearAction: function () {
+    //     var frames = [];
+    //     for (var i =0;  i < 11; i++){
+    //         var str = "sushi_1n" + i + '.png';
+    //         var frame = cc.spriteFrameCache.getSpriteFrame(str);
+    //         frames.push(frame);
+    //     }
+    //
+    //     var animation = new cc.Animation(frames,0.2);
+    //     var action = new cc.Animate(animation);
+    //     return action;
+    // }
 });

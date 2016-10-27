@@ -14,7 +14,7 @@ var PlayLayer = cc.Layer.extend({
 
 
         //add start menu
-        var startItem = new cc.MenuItemImage(res.Start_a_png, res.Start_e_png, function () {
+        var startItem = new cc.MenuItemImage(res.Start_S_png, res.Start_E_png, function () {
             cc.log("Menu is clicked!");
             // 切换场景 http://www.cocos.com/docs/js/3-jumping-into-cocos2d-js/3-5-transition-between-scenes/zh.html
             // cocos2d-js 3.x 之后场景切换用的是 cc.director.runScene （而不是：cc.director.replaceScene）
