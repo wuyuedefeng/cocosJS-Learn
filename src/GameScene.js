@@ -22,7 +22,7 @@ var GameLayer = cc.Layer.extend({
     },
     rouSprites: [],
     addRou: function () {
-        var rou = new cc.Sprite(res.Rou_png);
+        var rou = new RouSprite(res.Rou_png);
         this.rouSprites.push(rou);
         var size = cc.winSize;
 
@@ -40,6 +40,7 @@ var GameLayer = cc.Layer.extend({
         var rouSprites = this.rouSprites;
         for (var i=0; i<rouSprites.length; i++){
             if (rouSprites[i].y < 0){
+                console.log('rou-y: ', rouSprites[i].y);
                 rouSprites[i].removeFromParent();
                 rouSprites.splice(i, 1);
                 i--;

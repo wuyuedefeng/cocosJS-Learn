@@ -13,6 +13,8 @@
 
     "jsList" : [
         "src/resource.js",
+        "src/sprites/RouSprite.js",
+
         "src/app.js",
         "src/StartScene.js",
         "src/PlayScene.js",
